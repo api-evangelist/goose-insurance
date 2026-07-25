@@ -39,6 +39,8 @@ modified: '2026-07-25'
 specificationVersion: '0.19'
 apis: []
 common:
+- type: DomainSecurity
+  url: security/goose-insurance-domain-security.yml
 - type: Website
   url: https://www.gooseinsurance.com/
 - type: About
@@ -53,6 +55,20 @@ common:
   url: https://www.gooseinsurance.com/en-ca/blog
 - type: News
   url: https://www.gooseinsurance.com/en-ca/news
+- type: Announcements
+  url: https://www.gooseinsurance.com/en-ca/announcements
+- type: Claims
+  url: https://www.gooseinsurance.com/en-ca/claims
+- type: PolicyWordings
+  url: https://www.gooseinsurance.com/en-ca/policy-wordings
+- type: AffiliateProgram
+  url: https://www.gooseinsurance.com/en-ca/affiliate-program
+- type: ReferralProgram
+  url: https://www.gooseinsurance.com/en-ca/referral-program
+- type: iOSApp
+  url: https://apps.apple.com/ca/app/goose-insurance/id1382976076
+- type: AndroidApp
+  url: https://play.google.com/store/search?q=goose%20insurance&c=apps&hl=en_CA
 - type: PrivacyPolicy
   url: https://www.gooseinsurance.com/en-ca/privacy-policy
 - type: TermsOfService
@@ -67,6 +83,12 @@ common:
   url: https://www.facebook.com/gooseinsurance
 - type: Instagram
   url: https://www.instagram.com/gooseinsuranceca/
+- type: DomainSecurity
+  url: security/goose-insurance-domain-security.yml
+- type: Conformance
+  url: conformance/goose-insurance-conformance.yml
+- type: LLMsTxt
+  url: llms/goose-insurance-llms.txt
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com

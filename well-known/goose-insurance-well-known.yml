@@ -1,0 +1,53 @@
+generated: '2026-07-25'
+method: searched
+source: live probes of the /.well-known/ discovery surface on every Goose Insurance host
+note: >-
+  Recorded negative. Goose Insurance serves no /.well-known/ discovery document on
+  any host — not security.txt (RFC 9116), not OpenID Connect discovery, not
+  RFC 8414 OAuth authorization-server metadata, not an RFC 9727 api-catalog, not an
+  ai-plugin manifest. Every path below was probed on 2026-07-25 and returned 404
+  (or the host does not resolve). Because no catalog or discovery document exists,
+  this artifact deliberately carries NO `WellKnown` / `APICatalog` / `SecurityTxt`
+  pointer in apis.yml — it is evidence of absence, not a discovery surface.
+hosts:
+- host: https://www.gooseinsurance.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /security.txt
+    status: 404
+  - path: /llms.txt
+    status: 404
+- host: https://api.gooseinsurance.com
+  note: Private Heroku mobile-app backend; bare HTML 404 at every path.
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+- host: https://developer.gooseinsurance.com
+  status: dns-nxdomain
+  documents: []
+- host: https://docs.gooseinsurance.com
+  status: dns-nxdomain
+  documents: []
+- host: https://mcp.gooseinsurance.com
+  status: dns-nxdomain
+  documents: []
+files: []

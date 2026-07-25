@@ -1,0 +1,78 @@
+# Goose Insurance
+
+> Goose Insurance Services Inc. is a Vancouver, British Columbia digital insurance
+> distributor — an app-first licensed agency and MGA, not a carrier — selling travel
+> medical, Visitors to Canada, term life, whole life, final expense, critical illness,
+> accidental death and dismemberment, hospital cash, kids and renters coverage through
+> the Goose mobile "insurance super app". Founded 2017, US launch 2020, 150,000+ members.
+> Every policy is placed with a partner carrier (AIG Canada, iA Financial Group, TuGo,
+> IMG, MSH, American-Amicable, Teachers Life, Lloyd's of London, Sutton National).
+
+## API posture
+
+Goose Insurance publishes NO public API. As of the 2026-07-25 review and re-probe there
+is no developer portal, no self-serve documentation, no OpenAPI/Swagger/AsyncAPI/GraphQL
+SDL/.proto, no MCP server, no webhooks, no Postman collection, no public GitHub
+organization, and no ACORD/AL3/NGDS/IVANS agency-management integration. The only host
+answering on the api. subdomain (api.gooseinsurance.com) is a private Heroku-backed
+mobile-app backend that returns 404 at every probed path. Quote, bind, issue and FNOL all
+exist as product capability but are consumer-facing inside the app only. Canada has no
+open-insurance mandate — Consumer-Driven Banking excludes insurance — so nothing obliges
+Goose to publish these as APIs.
+
+Do not attempt to call an undocumented Goose endpoint. There is no supported programmatic
+integration path; commercial contact is the affiliate/referral program or the carrier
+relationships team.
+
+## Company
+
+- [Website](https://www.gooseinsurance.com/): Marketing site and product catalog (en-ca / fr-ca).
+- [About](https://www.gooseinsurance.com/en-ca/about): Company story, founding, leadership.
+- [Partners](https://www.gooseinsurance.com/en-ca/partners): Underwriting carriers and investors — not a technical integration program.
+- [Licensing](https://www.gooseinsurance.com/en-ca/licensing): Provincial general, life and A&S agent licences (BC, AB, SK, MB, ON, QC AMF 603913, NB, NS).
+- [Contact](https://www.gooseinsurance.com/en-ca/contact): support@gooseinsurance.com, +1 (888) 374-6673.
+- [Careers](https://www.gooseinsurance.com/en-ca/careers)
+
+## Products
+
+- [Travel Insurance](https://www.gooseinsurance.com/en-ca/travel-insurance)
+- [Visitors to Canada Insurance](https://www.gooseinsurance.com/en-ca/visitors-to-canada-insurance)
+- [Life Insurance](https://www.gooseinsurance.com/en-ca/life-insurance)
+- [Whole Life Insurance](https://www.gooseinsurance.com/en-ca/whole-life-insurance)
+- [Final Expense](https://www.gooseinsurance.com/en-ca/final-expense)
+- [Critical Illness](https://www.gooseinsurance.com/en-ca/critical-illness)
+- [Accidental Death and Dismemberment](https://www.gooseinsurance.com/en-ca/accidental-death-and-dismemberment)
+- [Hospital Cash](https://www.gooseinsurance.com/en-ca/hospital-cash)
+- [Kids Insurance](https://www.gooseinsurance.com/en-ca/kids-insurance)
+
+## Channels
+
+- [iOS app](https://apps.apple.com/ca/app/goose-insurance/id1382976076): The primary quote/bind/issue channel.
+- [Android app](https://play.google.com/store/search?q=goose%20insurance&c=apps&hl=en_CA)
+- [Support / Help Center](https://support.gooseinsurance.com/): Zendesk consumer help center (not developer docs).
+- [Claims](https://www.gooseinsurance.com/en-ca/claims): FNOL is filed here and through the underwriting carrier — no FNOL API.
+
+## Commercial programs
+
+- [Affiliate Program](https://www.gooseinsurance.com/en-ca/affiliate-program): Referral link tracking, up to $150 per new member's first policy. Link tracking only — no API, no feed.
+- [Referral Program](https://www.gooseinsurance.com/en-ca/referral-program)
+
+## Policies
+
+- [Terms of Use](https://www.gooseinsurance.com/en-ca/terms-of-use)
+- [Privacy Policy](https://www.gooseinsurance.com/en-ca/privacy-policy)
+- [Policy Wordings](https://www.gooseinsurance.com/en-ca/policy-wordings)
+
+## Content
+
+- [Blog](https://www.gooseinsurance.com/en-ca/blog)
+- [News](https://www.gooseinsurance.com/en-ca/news)
+- [Announcements](https://www.gooseinsurance.com/en-ca/announcements)
+
+## API Evangelist artifacts
+
+- [apis.yml](https://raw.githubusercontent.com/api-evangelist/goose-insurance/refs/heads/main/apis.yml): APIs.json provider index.
+- [review.yml](https://raw.githubusercontent.com/api-evangelist/goose-insurance/refs/heads/main/review.yml): Full developer-surface review with every probed URL and status.
+- [conformance](https://raw.githubusercontent.com/api-evangelist/goose-insurance/refs/heads/main/conformance/goose-insurance-conformance.yml): Standards posture (all probed negatives, plus TLS/HSTS/DMARC).
+- [domain security](https://raw.githubusercontent.com/api-evangelist/goose-insurance/refs/heads/main/security/goose-insurance-domain-security.yml): TLS/HSTS/DNSSEC/CAA/SPF/DMARC probe results.
+- [well-known](https://raw.githubusercontent.com/api-evangelist/goose-insurance/refs/heads/main/well-known/goose-insurance-well-known.yml): Recorded absence of every /.well-known/ discovery document.
