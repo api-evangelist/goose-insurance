@@ -1,0 +1,72 @@
+aid: goose-insurance
+url: https://raw.githubusercontent.com/api-evangelist/goose-insurance/refs/heads/main/apis.yml
+name: Goose Insurance
+kind: company
+description: >-
+  Goose Insurance Services Inc. is a Vancouver, British Columbia based
+  digital insurance distributor — an app-first licensed agency and MGA rather than
+  a carrier — that sells travel medical, Visitors to Canada, term life, whole life,
+  final expense, critical illness, accidental death and dismemberment, hospital cash,
+  kids and renters coverage through the Goose mobile "insurance super app". Founded
+  in 2017 and licensed in British Columbia, Alberta, Saskatchewan, Manitoba, Ontario,
+  Quebec (AMF firm registration 603913), New Brunswick and Nova Scotia, Goose
+  underwrites nothing itself: every policy is placed with a partner carrier including
+  AIG Canada, iA Financial Group, TuGo, IMG, MSH, American-Amicable, Teachers Life,
+  Lloyd's of London and Sutton National. Its home market is Canada, with a US
+  launch in 2020, and it sits in the thin digital-broker layer beneath the Big-Few
+  Canadian oligopoly alongside Zensurance and APOLLO. Goose's API posture is closed:
+  as of the 2026-07-25 review there is no public developer portal, no self-serve
+  API documentation, no downloadable OpenAPI or Swagger, and no published ACORD,
+  AL3 or agency-management-system integration. The only host that answers on the
+  api. subdomain is a private Heroku-backed mobile-app backend that returns 404 at
+  every probed path, and the only partner surfaces the company publishes are a
+  marketing affiliate/referral program and a carrier-relationships page — quote,
+  bind, issue and FNOL are all consumer-facing inside the app only.
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+tags:
+- Insurance
+- Canada
+- Insurtech
+- Life Insurance
+- Travel Insurance
+- Health Insurance
+- Broker
+- Digital Distribution
+- Managing General Agent
+- Mobile
+created: '2026-07-25'
+modified: '2026-07-25'
+specificationVersion: '0.19'
+apis: []
+common:
+- type: Website
+  url: https://www.gooseinsurance.com/
+- type: About
+  url: https://www.gooseinsurance.com/en-ca/about
+- type: Partners
+  url: https://www.gooseinsurance.com/en-ca/partners
+- type: Licensing
+  url: https://www.gooseinsurance.com/en-ca/licensing
+- type: Support
+  url: https://support.gooseinsurance.com/
+- type: Blog
+  url: https://www.gooseinsurance.com/en-ca/blog
+- type: News
+  url: https://www.gooseinsurance.com/en-ca/news
+- type: PrivacyPolicy
+  url: https://www.gooseinsurance.com/en-ca/privacy-policy
+- type: TermsOfService
+  url: https://www.gooseinsurance.com/en-ca/terms-of-use
+- type: Careers
+  url: https://www.gooseinsurance.com/en-ca/careers
+- type: Contact
+  url: https://www.gooseinsurance.com/en-ca/contact
+- type: X
+  url: https://twitter.com/gooseinsurance
+- type: Facebook
+  url: https://www.facebook.com/gooseinsurance
+- type: Instagram
+  url: https://www.instagram.com/gooseinsuranceca/
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com

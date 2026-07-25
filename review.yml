@@ -1,0 +1,259 @@
+aid: goose-insurance
+name: Goose Insurance
+review:
+  question: Does Goose Insurance publish a public, self-serve API surface for quote,
+    bind, issue, or FNOL?
+  answer: false
+  date: '2026-07-25'
+  reviewer: API Evangelist
+  homeMarket: Canada
+findings:
+  summary: |
+    Goose Insurance Services Inc. (Vancouver, British Columbia) publishes NO public
+    API surface of any kind. Every first-party developer hostname and path probed on
+    2026-07-25 either failed to resolve or returned 404. The company's 125-URL
+    sitemap contains no developer, docs, API, or integration path. The only
+    "partner" surfaces the company publishes are (a) a carrier-relationships page
+    listing the insurers who underwrite its products and (b) a marketing affiliate /
+    referral program that pays a referral fee on a tracked link — neither is a
+    technical integration surface. There is no login-walled developer portal either:
+    the developer surface simply does not exist publicly.
+
+    A host DOES answer at api.gooseinsurance.com — it is Heroku-fronted (server:
+    Heroku, heroku-nel reporting headers) and returns a bare HTML 404 at the root
+    and at every probed path. This is the private backend for the Goose mobile app,
+    not a documented product API. No spec, no reference, no auth documentation is
+    published for it.
+
+    Goose is a licensed distributor, not a carrier — it underwrites nothing. Policies
+    are placed with AIG Canada (hospital cash, income protection), iA Financial Group
+    (group life, AD&D, critical illness), American-Amicable (term life, final
+    expense), Teachers Life reinsured by Gen Re (term life), TuGo (travel medical),
+    IMG (international medical / trip cancellation), MSH Group (kids, COVID-19),
+    Lloyd's of London (Visitors to Canada) and Sutton National (renters). Any data
+    exchange with those carriers happens privately; none of it is published.
+
+    This is the expected and correct outcome for a Canadian direct-to-consumer
+    insurtech. Canada has no open-insurance mandate — Consumer-Driven Banking
+    explicitly excludes insurance — so there is no forcing function to publish
+    quote/bind/issue/FNOL as an API. Goose's product IS the app, and the app is the
+    only channel.
+  developerPortal:
+    exists: false
+    url: ''
+    classification: none
+    note: |
+      No developer portal was found in any form — not a self-serve portal, not a
+      partner login wall, not a marketing "innovation" page.
+  probes:
+  - url: https://gooseinsurance.com
+    status: 200
+    note: Redirects to https://www.gooseinsurance.com/ — marketing site only.
+  - url: https://developer.gooseinsurance.com
+    status: 0
+    note: DNS does not resolve.
+  - url: https://developers.gooseinsurance.com
+    status: 0
+    note: DNS does not resolve.
+  - url: https://docs.gooseinsurance.com
+    status: 0
+    note: DNS does not resolve.
+  - url: https://api.gooseinsurance.com/
+    status: 404
+    note: |
+      Host resolves and answers. Response headers show server: Heroku plus
+      heroku-nel / report-to reporting endpoints. Body is a bare
+      "<h1>Not Found</h1>". Private mobile-app backend, undocumented.
+  - url: https://www.gooseinsurance.com/developers
+    status: 404
+  - url: https://www.gooseinsurance.com/api
+    status: 404
+  - url: https://www.gooseinsurance.com/developer
+    status: 404
+  - url: https://www.gooseinsurance.com/partners
+    status: 404
+    note: |
+      The real partners page is locale-prefixed at /en-ca/partners (200) and is a
+      list of underwriting carriers and investors, not an integration program.
+  - url: https://www.gooseinsurance.com/integrations
+    status: 404
+  - url: https://api.gooseinsurance.com/openapi.json
+    status: 404
+  - url: https://api.gooseinsurance.com/openapi.yaml
+    status: 404
+  - url: https://api.gooseinsurance.com/swagger.json
+    status: 404
+  - url: https://api.gooseinsurance.com/v1/openapi.json
+    status: 404
+  - url: https://api.gooseinsurance.com/api/v1/openapi.json
+    status: 404
+  - url: https://api.gooseinsurance.com/api-docs
+    status: 404
+  - url: https://api.gooseinsurance.com/docs
+    status: 404
+  - url: https://api.gooseinsurance.com/swagger
+    status: 404
+  - url: https://api.gooseinsurance.com/swagger-ui
+    status: 404
+  - url: https://api.gooseinsurance.com/redoc
+    status: 404
+  - url: https://api.gooseinsurance.com/spec
+    status: 404
+  - url: https://api.gooseinsurance.com/graphql
+    status: 404
+  - url: https://api.gooseinsurance.com/health
+    status: 404
+  - url: https://api.gooseinsurance.com/.well-known/openid-configuration
+    status: 404
+  - url: https://api.gooseinsurance.com/.well-known/oauth-authorization-server
+    status: 404
+  - url: https://api.gooseinsurance.com/.well-known/security.txt
+    status: 404
+  - url: https://www.gooseinsurance.com/.well-known/openid-configuration
+    status: 404
+  - url: https://www.gooseinsurance.com/.well-known/security.txt
+    status: 404
+  - url: https://www.gooseinsurance.com/llms.txt
+    status: 404
+  - url: https://www.gooseinsurance.com/robots.txt
+    status: 200
+    note: |
+      Allows all, disallows /wp-content/, points at
+      https://www.gooseinsurance.com/sitemap-0.xml.
+  - url: https://www.gooseinsurance.com/sitemap-0.xml
+    status: 200
+    note: |
+      125 URLs across /en-ca and /fr-ca. Zero developer, docs, api, swagger, or
+      integration paths. Confirms the absence is site-wide, not just at guessed
+      hostnames.
+  - url: https://support.gooseinsurance.com/
+    status: 403
+    note: |
+      Redirects to /hc/en-us — a Zendesk consumer help center that blocks
+      non-browser agents. Consumer FAQ, not developer documentation.
+  - url: https://api.github.com/orgs/gooseinsurance
+    status: 404
+    note: No public GitHub organization under gooseinsurance or goose-insurance.
+  specs:
+    openapiFound: false
+    count: 0
+    note: |
+      No OpenAPI, Swagger, AsyncAPI, GraphQL SDL, or .proto artifact exists to
+      harvest. The openapi/ directory is intentionally omitted from this repo.
+  acord:
+    posture: no ACORD reference found
+    searchedFor:
+    - ACORD
+    - AL3
+    - ACORD XML
+    - ACORD certified
+    - NGDS
+    - IVANS
+    - agency download
+    - Applied Epic
+    - Vertafore AMS360
+    note: |
+      No occurrence of ACORD, AL3, NGDS, IVANS, Applied Epic, or Vertafore appears
+      anywhere on gooseinsurance.com — not in the product pages, the partners page,
+      the licensing page, the claims page, the terms of use, or the privacy policy.
+      Goose is a direct-to-consumer app, not an agency-management-system participant,
+      so the ACORD/IVANS download rail that carries US and Canadian broker data does
+      not touch it. Absence here is a real finding, not a gap in the search.
+  insuranceVerbs:
+    quote:
+      exposed: false
+      channel: consumer mobile app only
+    bind:
+      exposed: false
+      channel: consumer mobile app only
+    issue:
+      exposed: false
+      channel: consumer mobile app only
+    fnol:
+      exposed: false
+      channel: |
+        Claims are filed through https://www.gooseinsurance.com/en-ca/claims and the
+        underwriting carrier's own claims process. No FNOL API.
+    note: |
+      All four verbs exist as product capability — Goose's whole pitch is quote and
+      buy in seconds from a phone — but none is exposed as an addressable API.
+  auth:
+    model: none published
+    note: |
+      No API key program, no OAuth2 client-credentials or authorization-code flow, no
+      mTLS partner onboarding, and no SAML partner SSO is documented. Neither
+      /.well-known/openid-configuration nor /.well-known/oauth-authorization-server
+      is served on www or api. Mobile-app authentication is undocumented and private.
+  webhooks:
+    exists: false
+    note: No event catalog, no AsyncAPI, no webhook documentation.
+  postman:
+    exists: false
+    note: No public Postman collection or workspace found.
+  graphql:
+    exists: false
+    note: https://api.gooseinsurance.com/graphql returns 404; no SDL to introspect.
+  transports:
+  - protocol: REST
+    scheme: https
+    baseURL: https://api.gooseinsurance.com
+    documented: false
+    note: |
+      Host exists (Heroku) and serves the Goose mobile app. Undocumented, no public
+      reference, returned 404 at every probed path. Not a product API.
+  - protocol: GraphQL
+    documented: false
+  - protocol: WebSocket
+    scheme: wss
+    documented: false
+  - protocol: ACORD/EDI
+    documented: false
+    note: No ACORD AL3, ACORD XML, NGDS, or IVANS transport is referenced.
+  regulatoryContext: |
+    Canada has the most fragmented insurance supervision of the four markets studied:
+    OSFI supervises federally-regulated insurers prudentially while the provinces own
+    market conduct — FSRA in Ontario, AMF in Quebec. Goose appears on the market-conduct
+    side of that split, holding provincial general, life and A&S agent licences
+    (BC LIC-2018-0008799-R01 general / LIC-2019-0015533-R01 life A&S; ON 1076M general /
+    36825M life A&S; QC AMF 603913; plus AB, SK, MB, NB, NS). There is no open-insurance
+    mandate in Canada and Consumer-Driven Banking excludes insurance entirely, so nothing
+    obliges Goose to publish an API.
+sources:
+- url: https://www.gooseinsurance.com/en-ca/about
+  type: About
+  note: |
+    Company story, founded 2017, US launch 2020, Series A 2021, app v3 in 2022,
+    150,000+ members. CEO Dejan Mirkovic. Positions Goose as a phone-first insurance
+    buying experience "without the need to speak to an agent".
+- url: https://www.gooseinsurance.com/en-ca/partners
+  type: Partners
+  note: |
+    Underwriting carriers — AIG Canada, American-Amicable, iA Financial Group, IMG,
+    MSH Group, TuGo, Lloyd's of London, Teachers Life (reinsured by Gen Re), Sutton
+    National — plus investors Impression Ventures, ManchesterStory, Real Ventures,
+    Axis Ventures, and marketing partner iHeartMedia. No technical integration
+    program of any kind is described on this page.
+- url: https://www.gooseinsurance.com/en-ca/affiliate-program
+  type: Partners
+  note: |
+    Marketing affiliate program: apply, receive a referral link, earn up to $150 per
+    new member who buys a first policy, paid against a monthly activity report and an
+    invoice. Link tracking only — no API, no feed, no data exchange.
+- url: https://www.gooseinsurance.com/en-ca/licensing
+  type: Licensing
+  note: |
+    Head office 800-1281 West Georgia Street, Vancouver BC. Lists active provincial
+    insurance licences across BC, AB, SK, MB, ON, QC (AMF 603913), NB and NS.
+- url: https://www.gooseinsurance.com/sitemap-0.xml
+  type: Sitemap
+  note: |
+    125 URLs. Used to confirm site-wide that no developer or API path is published.
+actions:
+  openapiHarvested: false
+  openapiDirectoryOmitted: true
+  apisEmpty: true
+  reason: |
+    apis[] is intentionally empty. Goose Insurance publishes no documented public API,
+    so listing one would be fabrication. This record's value is the accurate negative:
+    a Canadian D2C insurtech with a mobile-only distribution model, closed carrier
+    integrations, no ACORD footprint, and no public developer surface.
