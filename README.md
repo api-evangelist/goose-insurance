@@ -1,4 +1,4 @@
-# Goose Insurance (goose-insurance)
+# Goose Insurance
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -64,67 +64,83 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Goose Insurance Services Inc. is a Vancouver, British Columbia based digital insurance distributor — an app-first licensed agency and MGA rather than a carrier — that sells travel medical, Visitors to Canada, term life, whole life, final expense, critical illness, accidental death and dismemberment, hospital cash, kids and renters coverage through the Goose mobile "insurance super app". Founded in 2017 and licensed across British Columbia, Alberta, Saskatchewan, Manitoba, Ontario, Quebec (AMF firm registration 603913), New Brunswick and Nova Scotia, Goose underwrites nothing itself: every policy is placed with a partner carrier. Its home market is Canada, with a US launch in 2020, and it sits in the thin digital-broker layer beneath the Big-Few Canadian oligopoly alongside Zensurance and APOLLO.
+Goose Insurance Services Inc. is a Vancouver, British Columbia based digital insurance distributor — an app-first licensed agency and MGA rather than a carrier — that sells travel medical, Visitors to Canada, term life, whole life, final expense, critical illness, accidental death and dismemberment, hospital cash, kids and renters coverage through the Goose mobile "insurance super app". Founded in 2017 and licensed in British Columbia, Alberta, Saskatchewan, Manitoba, Ontario, Quebec (AMF firm registration 603913), New Brunswick and Nova Scotia, Goose underwrites nothing itself: every policy is placed with a partner carrier including AIG Canada, iA Financial Group, TuGo, IMG, MSH, American-Amicable, Teachers Life, Lloyd's of London and Sutton National. Its home market is Canada, with a US launch in 2020, and it sits in the thin digital-broker layer beneath the Big-Few Canadian oligopoly alongside Zensurance and APOLLO. Goose's API posture is closed: as of the 2026-07-25 review there is no public developer portal, no self-serve API documentation, no downloadable OpenAPI or Swagger, and no published ACORD, AL3 or agency-management-system integration. The only host that answers on the api. subdomain is a private Heroku-backed mobile-app backend that returns 404 at every probed path, and the only partner surfaces the company publishes are a marketing affiliate/referral program and a carrier-relationships page — quote, bind, issue and FNOL are all consumer-facing inside the app only.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/goose-insurance/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/goose-insurance/refs/heads/main/apis.yml)
+**Areas:** Insurance · Canada · Insurtech · Life Insurance · Travel Insurance · Health Insurance · Brokerage · Digital Distribution · Managing General Agent · Mobile
 
-## Tags
+## Goose Insurance on APIs.io
 
-- Insurance
-- Canada
-- Insurtech
-- Life Insurance
-- Travel Insurance
-- Health Insurance
-- Broker
-- Digital Distribution
-- Managing General Agent
-- Mobile
+Everything profiled for Goose Insurance is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/goose-insurance/](https://apis.io/providers/goose-insurance/)** — or go straight to one of the APIs or properties below.
 
-## Timestamps
+### Published properties
 
-- **Created:** 2026-07-25
-- **Modified:** 2026-07-25
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### Security (1)
 
-None. As of the 2026-07-25 review, Goose Insurance publishes **no public API**.
+Authentication, trust centre, and vulnerability disclosure.
 
-Every first-party developer hostname and path probed either failed to resolve or returned 404: `developer.`, `developers.` and `docs.gooseinsurance.com` do not resolve at all, and `/developers`, `/api`, `/developer`, `/partners` and `/integrations` on the marketing site all return 404. The site's 125-URL sitemap contains no developer, docs, API, or integration path anywhere.
+- [Goose Insurance Domain Security](https://apis.io/security/goose-insurance/goose-insurance-domain-security/)
 
-A host does answer at `https://api.gooseinsurance.com` — Heroku-fronted, returning a bare HTML 404 at the root and at every probed spec path (`/openapi.json`, `/swagger.json`, `/api-docs`, `/docs`, `/redoc`, `/spec`, `/graphql`, `/.well-known/*`). That is the private backend for the Goose mobile app, not a documented product API. No OpenAPI, Swagger, AsyncAPI, GraphQL SDL, `.proto`, or Postman collection exists to harvest, so this repo has no `openapi/` directory.
+## Where to find this API
 
-Nothing on the site references **ACORD, AL3, ACORD XML, NGDS, IVANS, Applied Epic, or Vertafore** — Goose is a direct-to-consumer app rather than an agency-management-system participant, so the ACORD/IVANS download rail does not touch it.
-
-Quote, bind, issue and FNOL all exist as product capability — quoting and buying in seconds from a phone is the entire pitch — but every one of them is consumer-facing inside the app, and none is exposed as an addressable API. Claims are filed through the claims page and the underwriting carrier's own process. No auth model, no webhooks, no event catalog is published.
-
-This is the expected posture for a Canadian D2C insurtech. Canada has no open-insurance mandate — Consumer-Driven Banking excludes insurance entirely — so there is no forcing function to publish quote/bind/issue/FNOL. The product is the app, and the app is the only channel.
-
-See [review.yml](review.yml) for the full probe log with HTTP statuses.
-
-## Underwriting Carriers
-
-Goose places every policy with a partner insurer, per its [partners page](https://www.gooseinsurance.com/en-ca/partners):
-
-- **AIG Canada** — hospital cash and income protection
-- **iA Financial Group** — group life, AD&D, critical illness
-- **American-Amicable Group** — term life, final expense
-- **Teachers Life** (reinsured by Gen Re) — term life
-- **TuGo** — travel medical
-- **IMG International** — international medical, trip cancellation
-- **MSH Group** — kids insurance, COVID-19 products
-- **Lloyd's of London** — Visitors to Canada
-- **Sutton National** — renters
-
-## Links
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
 - [Website](https://www.gooseinsurance.com/)
-- [About](https://www.gooseinsurance.com/en-ca/about)
-- [Partners](https://www.gooseinsurance.com/en-ca/partners)
-- [Licensing](https://www.gooseinsurance.com/en-ca/licensing)
-- [Help Center](https://support.gooseinsurance.com/)
+- [Support](https://support.gooseinsurance.com/)
 - [Blog](https://www.gooseinsurance.com/en-ca/blog)
-- [News](https://www.gooseinsurance.com/en-ca/news)
-- [Claims](https://www.gooseinsurance.com/en-ca/claims)
-- [Contact](https://www.gooseinsurance.com/en-ca/contact)
-- [Careers](https://www.gooseinsurance.com/en-ca/careers)
+- [Terms of service](https://www.gooseinsurance.com/en-ca/terms-of-use)
+- [Privacy policy](https://www.gooseinsurance.com/en-ca/privacy-policy)
+
+## API Evangelist rating
+
+**Kin Score 11.8** — emerging · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 56.3 |
+| Contract quality | 0.0 |
+| Contract governance | 4.5 |
+| Operational transparency | 0.0 |
+| Developer ergonomics | 7.1 |
+| Access clarity | 21.1 |
+
+**Agent readiness 0.0** — human-only
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | — |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 16.7** — Insurance
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/goose-insurance/](https://apis.io/providers/goose-insurance/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Goose Insurance: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/goose-insurance/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
